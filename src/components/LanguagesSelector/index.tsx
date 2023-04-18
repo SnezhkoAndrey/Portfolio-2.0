@@ -27,6 +27,8 @@ const LanguagesSelector = () => {
 
   const color = theme ? "#0C151D" : "#fff";
   const background = theme ? "#e7e8e8" : "#3d444a";
+  const border = theme ? "#6d7377" : "rgba(255, 255, 255, 0.4)";
+  const icon = theme ? "#6d7377" : "#9EA1A5";
 
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -48,16 +50,16 @@ const LanguagesSelector = () => {
             color: { color },
             fontSize: "14px",
             ".MuiOutlinedInput-notchedOutline": {
-              borderColor: "rgba(255, 255, 255, 0.4)",
+              borderColor: border,
             },
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "rgba(255, 255, 255, 0.4)",
+              borderColor: border,
             },
             "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "rgba(255, 255, 255, 0.4)",
+              borderColor: border,
             },
             ".MuiSvgIcon-root ": {
-              fill: "#9EA1A5 !important",
+              fill: `${icon} !important`,
             },
           }}
         >
