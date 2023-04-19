@@ -24,7 +24,11 @@ const Title = () => {
           <p className={addTheme(styles.profession)}>{t("home_profession")}</p>
         </div>
       </div>
-      <a href="https://www.dropbox.com/s/q3jh43wdjd6qqap/resume.pdf?dl=0">
+      <a
+        href="https://www.dropbox.com/s/q3jh43wdjd6qqap/resume.pdf?dl=0"
+        target="_blank"
+        rel="noreferrer"
+      >
         <button className={styles.button}>
           <div className={styles.downloadButton}>
             <p>{t("home_download")}</p>

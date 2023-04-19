@@ -59,7 +59,11 @@ const Contacts = () => {
         <p className={addTheme(styles.phoneContent)}>+38 (097) 603 39 10</p>
       </div>
       <div className={styles.link}>
-        <a href="https://www.linkedin.com/in/andrii-snizhko-887785258/">
+        <a
+          href="https://www.linkedin.com/in/andrii-snizhko-887785258/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className={addTheme(styles.linkButton)}>
             <img
               className={styles.linkLogo}
@@ -68,7 +72,7 @@ const Contacts = () => {
             />
           </button>
         </a>
-        <a href="https://t.me/AndriiSnizhko">
+        <a href="https://t.me/AndriiSnizhko" target="_blank" rel="noreferrer">
           <button className={addTheme(styles.linkButton)}>
             <img
               className={styles.linkLogo}
@@ -77,7 +81,11 @@ const Contacts = () => {
             />
           </button>
         </a>
-        <a href="https://github.com/SnezhkoAndrey">
+        <a
+          href="https://github.com/SnezhkoAndrey"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className={addTheme(styles.linkButton)}>
             <img
               className={styles.linkLogo}

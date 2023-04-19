@@ -56,11 +56,21 @@ const ProjectDropdown = ({
           ))}
         </div>
         <div className={styles.links}>
-          <a className={addTheme(styles.linkCode)} href={codeLink}>
+          <a
+            className={addTheme(styles.linkCode)}
+            href={codeLink}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={theme ? gitButton_light : gitButton_dark} alt="git" />
             <p className={addTheme(styles.codeName)}>{t("pb_code")}</p>
           </a>
-          <a className={addTheme(styles.linkDemo)} href={demoLink}>
+          <a
+            className={addTheme(styles.linkDemo)}
+            href={demoLink}
+            target="_blank"
+            rel="noreferrer"
+          >
             {t("pb_demo")}
           </a>
         </div>
