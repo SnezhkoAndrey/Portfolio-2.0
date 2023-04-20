@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { GlobalContext } from "../../../../context/GlobalContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import useTheme from "../../../../hooks/useTheme";
 import styles from "./ProjectDropdown.module.scss";
 import marker_light from "../../../../assets/marker-light.png";
@@ -31,20 +31,33 @@ const ProjectDropdown = ({
 
   const { addTheme } = useTheme(theme, styles.light);
 
+  const [open, setOpen] = useState(false);
+
   return (
-    <details className={addTheme(styles.details)}>
-      <summary className={addTheme(styles.summary)}>
+    <div className={addTheme(styles.details)}>
+      <div
+        className={addTheme(
+          open ? `${styles.summary} ${styles.active}` : styles.summary
+        )}
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         <div className={styles.contentItem}>
           <p className={addTheme(styles.number)}>{number}</p>
           <h3 className={addTheme(styles.name)}>{name}</h3>
         </div>
         <img
-          className={styles.marker}
+          className={open ? `${styles.marker} ${styles.active}` : styles.marker}
           src={theme ? marker_light : marker_dark}
           alt="marker"
         />
-      </summary>
-      <div className={styles.content}>
+      </div>
+      <div
+        className={addTheme(
+          open ? `${styles.content} ${styles.active}` : styles.content
+        )}
+      >
         <h4 className={addTheme(styles.descTitle)}>{t("pb_desc")}</h4>
         <p className={addTheme(styles.desc)}>{desc}</p>
         <h4 className={addTheme(styles.descTitle)}>{t("pb_teck")}</h4>
@@ -75,7 +88,7 @@ const ProjectDropdown = ({
           </a>
         </div>
       </div>
-    </details>
+    </div>
   );
 };
 
