@@ -5,6 +5,7 @@ import useTheme from "../../../../hooks/useTheme";
 import styles from "./Title.module.scss";
 import avatar from "../../../../assets/avatar.png";
 import download from "../../../../assets/download.png";
+import resume from "./resume.pdf";
 
 const Title = () => {
   const { t } = useTranslation();
@@ -25,9 +26,11 @@ const Title = () => {
         </div>
       </div>
       <a
-        href="https://www.dropbox.com/s/q3jh43wdjd6qqap/resume.pdf?dl=0"
+        href={resume}
+        // href="https://www.dropbox.com/s/q3jh43wdjd6qqap/resume.pdf?dl=0"
         target="_blank"
         rel="noreferrer"
+        download="resume.pdf"
       >
         <button className={styles.button}>
           <div className={styles.downloadButton}>

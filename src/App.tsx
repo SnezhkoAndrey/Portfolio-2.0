@@ -8,16 +8,11 @@ function App() {
   const { theme } = useContext(GlobalContext);
 
   return (
-    <div className="App">
+    <div className="App" style={{ background: theme ? "#fff" : "#0c151d" }}>
       <div className="appWrapper">
         <Header />
         <Portfolio />
       </div>
-      <style>{`
-        body {
-          background: ${theme ? "#fff" : "#0c151d"};
-        }
-      `}</style>
     </div>
   );
 }

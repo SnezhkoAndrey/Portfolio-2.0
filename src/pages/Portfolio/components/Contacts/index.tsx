@@ -13,6 +13,7 @@ import telegram_dark from "../../../../assets/telegram-dark.png";
 import telegram_light from "../../../../assets/telegram-light.png";
 import git_dark from "../../../../assets/git-dark.png";
 import git_light from "../../../../assets/git-light.png";
+import ContactLink from "../ContactLink/ContactLink";
 
 const Contacts = () => {
   const { t } = useTranslation();
@@ -59,41 +60,21 @@ const Contacts = () => {
         <p className={addTheme(styles.phoneContent)}>+38 (097) 603 39 10</p>
       </div>
       <div className={styles.link}>
-        <a
-          href="https://www.linkedin.com/in/andrii-snizhko-887785258/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button className={addTheme(styles.linkButton)}>
-            <img
-              className={styles.linkLogo}
-              src={theme ? linkedin_dark : linkedin_light}
-              alt="linkedin"
-            />
-          </button>
-        </a>
-        <a href="https://t.me/AndriiSnizhko" target="_blank" rel="noreferrer">
-          <button className={addTheme(styles.linkButton)}>
-            <img
-              className={styles.linkLogo}
-              src={theme ? telegram_dark : telegram_light}
-              alt="telegram"
-            />
-          </button>
-        </a>
-        <a
-          href="https://github.com/SnezhkoAndrey"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button className={addTheme(styles.linkButton)}>
-            <img
-              className={styles.linkLogo}
-              src={theme ? git_dark : git_light}
-              alt="git"
-            />
-          </button>
-        </a>
+        <ContactLink
+          link="https://www.linkedin.com/in/andrii-snizhko-887785258/"
+          logo={theme ? linkedin_dark : linkedin_light}
+          alt="linkedin"
+        />
+        <ContactLink
+          link="https://t.me/AndriiSnizhko"
+          logo={theme ? telegram_dark : telegram_light}
+          alt="telegram"
+        />
+        <ContactLink
+          link="https://github.com/SnezhkoAndrey"
+          logo={theme ? git_dark : git_light}
+          alt="git"
+        />
       </div>
     </div>
   );

@@ -20,8 +20,8 @@ const Portfolio = () => {
         <Generally />
         <Contacts />
       </div>
-      <Projects />
       <About />
+      <Projects />
     </div>
   );
 };

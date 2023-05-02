@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../../../context/GlobalContext";
 import useTheme from "../../../../hooks/useTheme";
 import AboutDropdown from "../AboutDropdown/AboutDropdown";
+import { contentTech } from "../../../../data/aboutData";
 
 const About = () => {
   const { t } = useTranslation();
@@ -11,25 +12,6 @@ const About = () => {
   const { theme } = useContext(GlobalContext);
 
   const { addTheme } = useTheme(theme, styles.light);
-
-  const contentTech = [
-    "JavaSctipt ES6+",
-    "React/React hooks",
-    "TypeScript",
-    "Next JS",
-    "MobX",
-    "Redux/Redux-toolkit/Redux-thunk",
-    "Jest/React testing library",
-    "HTML5",
-    "CSS3/SASS/SCSS",
-    "AntDesign/Material UI/Bootstrap",
-    "REST API",
-    "npm/yarn",
-    "JSON",
-    "OOP/functional programming",
-    "Classes components(lifecycle methods)",
-    "i18Next",
-  ];
 
   return (
     <div className={addTheme(styles.about)}>
