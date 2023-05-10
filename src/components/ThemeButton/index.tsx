@@ -2,8 +2,8 @@ import { useContext } from "react";
 import styles from "./ThemeButton.module.scss";
 import { GlobalContext } from "../../context/GlobalContext";
 import useTheme from "../../hooks/useTheme";
-import theme_light from "../../assets/theme-light.png";
-import theme_dark from "../../assets/theme-dark.png";
+import Theme_light from "../../assets/theme-light.svg";
+import Theme_dark from "../../assets/theme-dark.svg";
 
 const ThemeButton = () => {
   const { changeTheme, theme } = useContext(GlobalContext);
@@ -14,7 +14,7 @@ const ThemeButton = () => {
     <button className={addTheme(styles.themeButton)} onClick={changeTheme}>
       <img
         className={addTheme(styles.themeImg)}
-        src={theme ? theme_light : theme_dark}
+        src={theme ? Theme_light : Theme_dark}
         alt="theme"
       />
     </button>

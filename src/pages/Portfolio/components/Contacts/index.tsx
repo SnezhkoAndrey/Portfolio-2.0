@@ -3,16 +3,16 @@ import { GlobalContext } from "../../../../context/GlobalContext";
 import { useContext, useState } from "react";
 import useTheme from "../../../../hooks/useTheme";
 import styles from "./Contacts.module.scss";
-import email_light from "../../../../assets/email-light.png";
-import email_dark from "../../../../assets/email-dark.png";
-import phone_light from "../../../../assets/phone-light.png";
-import phone_dark from "../../../../assets/phone-dark.png";
-import linkedin_dark from "../../../../assets/linkedin-dark.png";
-import linkedin_light from "../../../../assets/linkedin-light.png";
-import telegram_dark from "../../../../assets/telegram-dark.png";
-import telegram_light from "../../../../assets/telegram-light.png";
-import git_dark from "../../../../assets/git-dark.png";
-import git_light from "../../../../assets/git-light.png";
+import Email_light from "../../../../assets/email-light.svg";
+import Email_dark from "../../../../assets/email-dark.svg";
+import Phone_light from "../../../../assets/phone-light.svg";
+import Phone_dark from "../../../../assets/phone-dark.svg";
+import Linkedin_dark from "../../../../assets/linkedin-dark.svg";
+import Linkedin_light from "../../../../assets/linkedin-light.svg";
+import Telegram_dark from "../../../../assets/telegram-dark.svg";
+import Telegram_light from "../../../../assets/telegram-light.svg";
+import Git_dark from "../../../../assets/git-dark.svg";
+import Git_light from "../../../../assets/git-light.svg";
 import ContactLink from "../ContactLink/ContactLink";
 
 const Contacts = () => {
@@ -40,7 +40,7 @@ const Contacts = () => {
         <div className={styles.emailItem}>
           <img
             className={styles.logo}
-            src={theme ? email_dark : email_light}
+            src={theme ? Email_light : Email_dark}
             alt="email"
           />
           <p className={addTheme(styles.emailContent)}>
@@ -54,7 +54,7 @@ const Contacts = () => {
       <div className={styles.phone}>
         <img
           className={styles.logo}
-          src={theme ? phone_dark : phone_light}
+          src={theme ? Phone_light : Phone_dark}
           alt="phone"
         />
         <p className={addTheme(styles.phoneContent)}>+38 (097) 603 39 10</p>
@@ -62,17 +62,17 @@ const Contacts = () => {
       <div className={styles.link}>
         <ContactLink
           link="https://www.linkedin.com/in/andrii-snizhko-887785258/"
-          logo={theme ? linkedin_dark : linkedin_light}
+          logo={theme ? Linkedin_light : Linkedin_dark}
           alt="linkedin"
         />
         <ContactLink
           link="https://t.me/AndriiSnizhko"
-          logo={theme ? telegram_dark : telegram_light}
+          logo={theme ? Telegram_light : Telegram_dark}
           alt="telegram"
         />
         <ContactLink
           link="https://github.com/SnezhkoAndrey"
-          logo={theme ? git_dark : git_light}
+          logo={theme ? Git_light : Git_dark}
           alt="git"
         />
       </div>

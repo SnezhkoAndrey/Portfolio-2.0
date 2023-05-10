@@ -1,9 +1,7 @@
 import { createContext, useState } from "react";
 
 export const GlobalContext = createContext({
-  changeTheme: () => {
-    //change context data
-  },
+  changeTheme: () => {},
   theme: false,
 });
 

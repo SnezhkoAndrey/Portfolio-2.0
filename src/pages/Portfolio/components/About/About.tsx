@@ -1,39 +1,24 @@
 import { useTranslation } from "react-i18next";
-import styles from "./About.module.scss";
-import { useContext } from "react";
-import { GlobalContext } from "../../../../context/GlobalContext";
-import useTheme from "../../../../hooks/useTheme";
 import AboutDropdown from "../AboutDropdown/AboutDropdown";
-import { contentTech } from "../../../../data/aboutData";
+import { useAboutData } from "../../../../data/aboutData.data";
+import AboutProjectBox from "../../../../components/AboutProjectBox/AboutProjectBox";
 
 const About = () => {
   const { t } = useTranslation();
 
-  const { theme } = useContext(GlobalContext);
-
-  const { addTheme } = useTheme(theme, styles.light);
+  const ABOUT_DATA = useAboutData(t);
 
   return (
-    <div className={addTheme(styles.about)}>
-      <h3 className={addTheme(styles.title)}>{t("about")}</h3>
-      <div className={styles.container}>
+    <AboutProjectBox title={t("about")}>
+      {ABOUT_DATA.map((data) => (
         <AboutDropdown
-          content={contentTech}
-          number="01."
-          name={t("home_skills")}
+          key={data.number}
+          content={data.content}
+          number={data.number}
+          name={data.name}
         />
-        <AboutDropdown
-          content={[t("home_univ"), t("home_course")]}
-          number="02."
-          name={t("home_edu")}
-        />
-        <AboutDropdown
-          content={[t("home_uk"), t("home_en"), t("home_ru")]}
-          number="03."
-          name={t("home_lang")}
-        />
-      </div>
-    </div>
+      ))}
+    </AboutProjectBox>
   );
 };
 

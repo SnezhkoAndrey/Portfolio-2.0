@@ -7,8 +7,8 @@ import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import usa from "../../assets/Flag_of_the_United_States.png";
-import uk from "../../assets/Ukraine.png";
+import USA from "../../assets/Flag_of_the_United_States 1.svg";
+import UA from "../../assets/Ukraine.svg";
 
 const LanguagesSelector = () => {
   const { i18n } = useTranslation();
@@ -26,8 +26,8 @@ const LanguagesSelector = () => {
   }, [language]);
 
   const color = theme ? "#0C151D" : "#fff";
-  const background = theme ? "#e7e8e8" : "#3d444a";
-  const border = theme ? "#6d7377" : "rgba(255, 255, 255, 0.4)";
+  const backgroundColor = theme ? "#e7e8e8" : "#3d444a";
+  const borderColor = theme ? "#6d7377" : "rgba(255, 255, 255, 0.4)";
   const icon = theme ? "#6d7377" : "#9EA1A5";
 
   return (
@@ -41,7 +41,7 @@ const LanguagesSelector = () => {
           MenuProps={{
             sx: {
               ".MuiMenu-paper": {
-                backgroundColor: background,
+                backgroundColor,
               },
             },
           }}
@@ -50,13 +50,13 @@ const LanguagesSelector = () => {
             color: { color },
             fontSize: "14px",
             ".MuiOutlinedInput-notchedOutline": {
-              borderColor: border,
+              borderColor,
             },
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: border,
+              borderColor,
             },
             "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: border,
+              borderColor,
             },
             ".MuiSvgIcon-root ": {
               fill: `${icon} !important`,
@@ -66,19 +66,19 @@ const LanguagesSelector = () => {
           <MenuItem
             value={"en"}
             sx={{
-              color: color,
+              color,
             }}
           >
-            <img className={styles.logo} src={usa} alt="usa" />
+            <img className={styles.logo} src={USA} alt="usa" />
             ENG
           </MenuItem>
           <MenuItem
             value={"uk"}
             sx={{
-              color: color,
+              color,
             }}
           >
-            <img className={styles.logo} src={uk} alt="uk" />
+            <img className={styles.logo} src={UA} alt="uk" />
             UA
           </MenuItem>
         </Select>

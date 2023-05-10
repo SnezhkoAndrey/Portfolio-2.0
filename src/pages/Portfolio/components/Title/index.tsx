@@ -3,9 +3,9 @@ import { GlobalContext } from "../../../../context/GlobalContext";
 import { useContext } from "react";
 import useTheme from "../../../../hooks/useTheme";
 import styles from "./Title.module.scss";
-import avatar from "../../../../assets/avatar.png";
-import download from "../../../../assets/download.png";
-import resume from "./resume.pdf";
+import Avatar from "../../../../assets/avatar.svg";
+import Download from "../../../../assets/download.svg";
+import Resume from "./resume.pdf";
 
 const Title = () => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ const Title = () => {
     <div className={addTheme(styles.title)}>
       <div className={styles.desc}>
         <div className={addTheme(styles.avatarWrapper)}>
-          <img className={styles.avatar} src={avatar} alt="avatar" />
+          <img className={styles.avatar} src={Avatar} alt="avatar" />
         </div>
         <div className={styles.name}>
           <h2 className={addTheme(styles.nameItem)}>{t("home_name")}</h2>
@@ -26,7 +26,7 @@ const Title = () => {
         </div>
       </div>
       <a
-        href={resume}
+        href={Resume}
         // href="https://www.dropbox.com/s/q3jh43wdjd6qqap/resume.pdf?dl=0"
         target="_blank"
         rel="noreferrer"
@@ -35,7 +35,7 @@ const Title = () => {
         <button className={styles.button}>
           <div className={styles.downloadButton}>
             <p>{t("home_download")}</p>
-            <img src={download} alt="download" />
+            <img src={Download} alt="download" />
           </div>
         </button>
       </a>
