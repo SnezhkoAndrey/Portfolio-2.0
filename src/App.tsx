@@ -3,12 +3,14 @@ import "./App.scss";
 import Header from "./components/Header";
 import Portfolio from "./pages/Portfolio";
 import { GlobalContext } from "./context/GlobalContext";
+import AnimatedCursor from "./components/Cursor";
 
 function App() {
   const { theme } = useContext(GlobalContext);
 
   return (
     <div className="App" style={{ background: theme ? "#fff" : "#0c151d" }}>
+      <AnimatedCursor />
       <div className="appWrapper">
         <Header />
         <Portfolio />

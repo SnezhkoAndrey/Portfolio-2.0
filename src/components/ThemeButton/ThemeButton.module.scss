@@ -13,8 +13,7 @@
   }
 
   &:hover {
-    background-color: #171f26;
-    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
 
     &.light {
       background-color: #e5e5e5;
@@ -23,10 +22,12 @@
 
   .themeImg {
     width: 22px;
+    filter: brightness(150%);
     transition: all 0.4s ease-in-out;
     transform: rotate(0);
 
     &.light {
+      filter: brightness(80%);
       transition: all 0.4s ease-in-out;
       transform: rotate(0.5turn);
     }

@@ -3,6 +3,7 @@ import styles from "./Generally.module.scss";
 import { GlobalContext } from "../../../../context/GlobalContext";
 import { useContext } from "react";
 import useTheme from "../../../../hooks/useTheme";
+import { motion } from "framer-motion";
 
 const Generally = () => {
   const { t } = useTranslation();
@@ -11,11 +12,28 @@ const Generally = () => {
 
   const { addTheme } = useTheme(theme, styles.light);
 
+  const divVariants = {
+    hidden: {
+      y: 500,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className={addTheme(styles.generally)}>
+    <motion.div
+      initial={"hidden"}
+      animate={"visible"}
+      transition={{ delay: 0.2 }}
+      variants={divVariants}
+      className={addTheme(styles.generally)}
+    >
       <h3 className={addTheme(styles.generallyTitle)}>{t("home_generally")}</h3>
       <p className={addTheme(styles.generallyContent)}>{t("home_desc")}</p>
-    </div>
+    </motion.div>
   );
 };
 

@@ -14,6 +14,7 @@ import Telegram_light from "../../../../assets/telegram-light.svg";
 import Git_dark from "../../../../assets/git-dark.svg";
 import Git_light from "../../../../assets/git-light.svg";
 import ContactLink from "../ContactLink/ContactLink";
+import { motion } from "framer-motion";
 
 const Contacts = () => {
   const { t } = useTranslation();
@@ -33,8 +34,25 @@ const Contacts = () => {
     setIsCopy(true);
   };
 
+  const divVariants = {
+    hidden: {
+      y: 500,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className={addTheme(styles.contacts)}>
+    <motion.div
+      initial={"hidden"}
+      animate={"visible"}
+      transition={{ delay: 0.2 }}
+      variants={divVariants}
+      className={addTheme(styles.contacts)}
+    >
       <h3 className={addTheme(styles.title)}>{t("home_contact")}</h3>
       <div className={addTheme(styles.email)}>
         <div className={styles.emailItem}>
@@ -76,7 +94,7 @@ const Contacts = () => {
           alt="git"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

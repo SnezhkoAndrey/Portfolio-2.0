@@ -5,7 +5,8 @@ import useTheme from "../../../../hooks/useTheme";
 import styles from "./Title.module.scss";
 import Avatar from "../../../../assets/avatar.png";
 import Download from "../../../../assets/download.svg";
-import Resume from "./resume.pdf";
+import Resume from "./CV_Andrii_Snizhko.pdf";
+import { motion } from "framer-motion";
 
 const Title = () => {
   const { t } = useTranslation();
@@ -14,8 +15,25 @@ const Title = () => {
 
   const { addTheme } = useTheme(theme, styles.light);
 
+  const divVariants = {
+    hidden: {
+      y: 500,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className={addTheme(styles.title)}>
+    <motion.div
+      initial={"hidden"}
+      animate={"visible"}
+      transition={{ delay: 0.1 }}
+      variants={divVariants}
+      className={addTheme(styles.title)}
+    >
       <div className={styles.desc}>
         <div className={addTheme(styles.avatarWrapper)}>
           <img className={styles.avatar} src={Avatar} alt="avatar" />
@@ -39,7 +57,7 @@ const Title = () => {
           </div>
         </button>
       </a>
-    </div>
+    </motion.div>
   );
 };
 

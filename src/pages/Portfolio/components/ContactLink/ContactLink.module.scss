@@ -20,6 +20,10 @@
     &.light {
       background-color: #9ea1a5;
     }
+
+    &:active {
+      filter: brightness(130%);
+    }
   }
 
   &:active {
