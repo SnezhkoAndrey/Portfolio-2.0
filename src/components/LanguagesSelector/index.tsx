@@ -3,87 +3,90 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguagesSelector.module.scss";
 import { GlobalContext } from "../../context/GlobalContext";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
 import USA from "../../assets/Flag_of_the_United_States 1.svg";
 import UA from "../../assets/Ukraine.svg";
+import marker_dark from "../../assets/marker-dark.svg";
+import marker_light from "../../assets/marker-light.svg";
+import select_dark from "../../assets/select-dark.svg";
+import select_light from "../../assets/select-light.svg";
+import useTheme from "../../hooks/useTheme";
+import Popper from "../Popper/Popper";
+import { LANGUAGES_BUTTON } from "../../data/selectData.data";
 
 const LanguagesSelector = () => {
   const { i18n } = useTranslation();
 
   const { theme } = useContext(GlobalContext);
 
-  const [language, setLanguage] = useState("en");
+  const { addTheme } = useTheme(theme, styles.light);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value);
+  const [language, setLanguage] = useState<"en" | "uk">("en");
+  const [openSelector, setOpenSelector] = useState(false);
+
+  const handleChange = (language: "en" | "uk") => {
+    setLanguage(language);
+    setOpenSelector(false);
   };
 
   useEffect(() => {
     i18n.changeLanguage(language);
   }, [language]);
 
-  const color = theme ? "#0C151D" : "#fff";
-  const backgroundColor = theme ? "#e7e8e8" : "#3d444a";
-  const borderColor = theme ? "#6d7377" : "rgba(255, 255, 255, 0.4)";
-  const icon = theme ? "#6d7377" : "#9EA1A5";
-
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <Select
-          value={language}
-          onChange={handleChange}
-          style={{ borderRadius: "100px" }}
-          SelectDisplayProps={{ style: { paddingTop: 8, paddingBottom: 8 } }}
-          MenuProps={{
-            sx: {
-              ".MuiMenu-paper": {
-                backgroundColor,
-              },
-            },
-          }}
-          sx={{
-            width: "120px",
-            color: { color },
-            fontSize: "14px",
-            ".MuiOutlinedInput-notchedOutline": {
-              borderColor,
-            },
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor,
-            },
-            "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor,
-            },
-            ".MuiSvgIcon-root ": {
-              fill: `${icon} !important`,
-            },
-          }}
+    <div className={styles.languageSelector}>
+      <button
+        className={addTheme(
+          openSelector ? `${styles.select} ${styles.active}` : styles.select
+        )}
+        onClick={() => {
+          setOpenSelector(!openSelector);
+        }}
+      >
+        <img
+          className={styles.logo}
+          src={language === "en" ? USA : UA}
+          alt="usa"
+        />
+        {language === "en" ? "ENG" : "UA"}
+        <img
+          className={
+            openSelector ? `${styles.marker} ${styles.active}` : styles.marker
+          }
+          src={theme ? marker_light : marker_dark}
+          alt="marker"
+        />
+      </button>
+      {openSelector && (
+        <Popper
+          open={openSelector}
+          onClickOutside={() => setOpenSelector(false)}
         >
-          <MenuItem
-            value={"en"}
-            sx={{
-              color,
-            }}
-          >
-            <img className={styles.logo} src={USA} alt="usa" />
-            ENG
-          </MenuItem>
-          <MenuItem
-            value={"uk"}
-            sx={{
-              color,
-            }}
-          >
-            <img className={styles.logo} src={UA} alt="uk" />
-            UA
-          </MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
+          {LANGUAGES_BUTTON.map((but) => (
+            <button
+              className={addTheme(styles.menuItem)}
+              onClick={() => handleChange(but.selectLang as "en" | "uk")}
+              key={but.selectLang}
+            >
+              <div className={addTheme(styles.item)}>
+                <img
+                  className={styles.logo}
+                  src={but.src}
+                  alt={but.selectLang}
+                />
+                {but.viewLang}
+              </div>
+              {language === but.selectLang && (
+                <img
+                  className={styles.selectArrow}
+                  src={theme ? select_light : select_dark}
+                  alt="select"
+                />
+              )}
+            </button>
+          ))}
+        </Popper>
+      )}
+    </div>
   );
 };
 

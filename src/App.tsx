@@ -8,9 +8,11 @@ import AnimatedCursor from "./components/Cursor";
 function App() {
   const { theme } = useContext(GlobalContext);
 
+  const isMobile = window.innerWidth >= 768;
+
   return (
     <div className="App" style={{ background: theme ? "#fff" : "#0c151d" }}>
-      <AnimatedCursor />
+      {isMobile && <AnimatedCursor />}
       <div className="appWrapper">
         <Header />
         <Portfolio />
