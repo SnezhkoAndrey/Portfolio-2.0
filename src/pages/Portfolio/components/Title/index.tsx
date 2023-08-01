@@ -45,7 +45,7 @@ const Title = () => {
       </div>
       <a
         href={Resume}
-        // href="https://www.dropbox.com/s/q3jh43wdjd6qqap/resume.pdf?dl=0"
+        // href="https://www.dropbox.com/s/c0a8epwgpjpuwn8/CV_Andrii_Snizhko.pdf?dl=0"
         target="_blank"
         rel="noreferrer"
         download="resume.pdf"

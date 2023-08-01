@@ -3,6 +3,7 @@ import { TFunction } from "i18next";
 export const CONTENT_TECHNOLOGIES = [
   "JavaSctipt ES6+",
   "React/React hooks",
+  "React Native/Expo",
   "TypeScript",
   "Next JS",
   "MobX",

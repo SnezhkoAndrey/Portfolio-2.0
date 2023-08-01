@@ -56,6 +56,8 @@ export const TECHNOLOGIES_TODO = [
   "LocalStorage",
 ];
 
+export const TECHNOLOGIES_TREE = ["React", "React hooks", "TypeScript", "SCSS"];
+
 export const useProjectData = (
   t: TFunction<"translation", undefined, "translation">
 ) => {
@@ -69,12 +71,20 @@ export const useProjectData = (
       number: "01.",
     },
     {
+      technologies: TECHNOLOGIES_TREE,
+      name: t("tree_name"),
+      desc: t("tree"),
+      codeLink: "https://github.com/SnezhkoAndrey/TreeGraphApp",
+      demoLink: "https://treecategoriesapp.web.app",
+      number: "02.",
+    },
+    {
       technologies: TECHNOLOGIES_TRANSLATOR,
       name: t("translator_name"),
       desc: t("translator"),
       codeLink: "https://github.com/SnezhkoAndrey/Translator",
       demoLink: "https://translator-c82ae.web.app",
-      number: "02.",
+      number: "03.",
     },
     {
       technologies: TECHNOLOGIES_WEATHER,
@@ -82,7 +92,7 @@ export const useProjectData = (
       desc: t("weather"),
       codeLink: "https://github.com/SnezhkoAndrey/Weather-App",
       demoLink: "https://weather-app-1a6ac.web.app",
-      number: "03.",
+      number: "04.",
     },
     {
       technologies: TECHNOLOGIES_TEST,
@@ -90,7 +100,7 @@ export const useProjectData = (
       desc: t("test"),
       codeLink: "https://github.com/SnezhkoAndrey/Test-app",
       demoLink: "https://snezhkoandrey.github.io/Test-app/",
-      number: "04.",
+      number: "05.",
     },
     {
       technologies: TECHNOLOGIES_TODO,
@@ -98,7 +108,7 @@ export const useProjectData = (
       desc: t("todo"),
       codeLink: "https://github.com/SnezhkoAndrey/ToDo",
       demoLink: "https://todo-application-c9530.web.app",
-      number: "05.",
+      number: "06.",
     },
   ];
 
