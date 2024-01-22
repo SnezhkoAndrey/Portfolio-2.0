@@ -68,7 +68,6 @@ export const useProjectData = (
       desc: t("rate"),
       codeLink: "https://github.com/SnezhkoAndrey/Exchange-Rate",
       demoLink: "https://exchangerate-908e7.web.app",
-      number: "01.",
     },
     {
       technologies: TECHNOLOGIES_TREE,
@@ -76,7 +75,6 @@ export const useProjectData = (
       desc: t("tree"),
       codeLink: "https://github.com/SnezhkoAndrey/TreeGraphApp",
       demoLink: "https://treecategoriesapp.web.app",
-      number: "02.",
     },
     {
       technologies: TECHNOLOGIES_TRANSLATOR,
@@ -84,7 +82,6 @@ export const useProjectData = (
       desc: t("translator"),
       codeLink: "https://github.com/SnezhkoAndrey/Translator",
       demoLink: "https://translator-c82ae.web.app",
-      number: "03.",
     },
     {
       technologies: TECHNOLOGIES_WEATHER,
@@ -92,7 +89,6 @@ export const useProjectData = (
       desc: t("weather"),
       codeLink: "https://github.com/SnezhkoAndrey/Weather-App",
       demoLink: "https://weather-app-1a6ac.web.app",
-      number: "04.",
     },
     {
       technologies: TECHNOLOGIES_TEST,
@@ -100,7 +96,6 @@ export const useProjectData = (
       desc: t("test"),
       codeLink: "https://github.com/SnezhkoAndrey/Test-app",
       demoLink: "https://snezhkoandrey.github.io/Test-app/",
-      number: "05.",
     },
     {
       technologies: TECHNOLOGIES_TODO,
@@ -108,7 +103,6 @@ export const useProjectData = (
       desc: t("todo"),
       codeLink: "https://github.com/SnezhkoAndrey/ToDo",
       demoLink: "https://todo-application-c9530.web.app",
-      number: "06.",
     },
   ];
 

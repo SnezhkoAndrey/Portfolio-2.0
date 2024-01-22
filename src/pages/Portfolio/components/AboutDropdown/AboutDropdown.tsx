@@ -5,12 +5,13 @@ import styles from "./AboutDropdown.module.scss";
 import DropdownBox from "../../../../components/DropdownBox/DropdownBox";
 
 interface PropsType {
+  aboutInfo: { name: string; content: string[] };
   number: string;
-  name: string;
-  content: string[];
 }
 
-const AboutDropdown = ({ number, name, content }: PropsType) => {
+const AboutDropdown = ({ aboutInfo, number }: PropsType) => {
+  const { name, content } = aboutInfo;
+
   const { theme } = useContext(GlobalContext);
 
   const { addTheme } = useTheme(theme, styles.light);

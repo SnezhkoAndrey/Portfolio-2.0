@@ -8,22 +8,19 @@ import GitButton_dark from "../../../../assets/gitButton-dark.svg";
 import DropdownBox from "../../../../components/DropdownBox/DropdownBox";
 
 interface PropsType {
-  technologies: string[];
-  name: string;
-  desc: string;
-  codeLink: string;
-  demoLink: string;
+  projectInfo: {
+    technologies: string[];
+    name: string;
+    desc: string;
+    codeLink: string;
+    demoLink: string;
+  };
   number: string;
 }
 
-const ProjectDropdown = ({
-  technologies,
-  name,
-  desc,
-  codeLink,
-  demoLink,
-  number,
-}: PropsType) => {
+const ProjectDropdown = ({ projectInfo, number }: PropsType) => {
+  const { technologies, name, desc, codeLink, demoLink } = projectInfo;
+
   const { t } = useTranslation();
 
   const { theme } = useContext(GlobalContext);

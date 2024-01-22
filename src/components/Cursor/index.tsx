@@ -126,7 +126,7 @@ function AnimatedCursor({
 
   useEffect(() => {
     const clickables = document.querySelectorAll<HTMLElement>(
-      'a, input[type="submit"], input[type="image"], label[for], select, button, .link, .MuiSelect-select, .DropdownBox_summary__fa-qF'
+      'a, input[type="submit"], input[type="image"], label[for], select, button, .link, .DropdownBox_summary__fa-qF'
     );
     clickables.forEach((el) => {
       el.style.cursor = "none";
